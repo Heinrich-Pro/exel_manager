@@ -6,7 +6,7 @@ class Employee(models.Model):
     email = models.EmailField(unique=True)
     telephone = models.CharField(max_length=20, blank=True, null=True)
     date_naissance = models.DateField(blank=True, null=True)
-    salaire = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    salaire = models.DecimalField(max_digits=50, decimal_places=2, blank=True, null=True)
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
 

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'excel_app',
     'rest_framework',
     'drf_yasg',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
