@@ -1,4 +1,5 @@
 {% extends 'excel_app/base.html' %}
+{% load humanize %}
 
 {% block content %}
 <h2>Liste des Employés</h2>
@@ -26,9 +27,10 @@
                 <td>{{ employee.email }}</td>
                 <td>{{ employee.telephone|default:"-" }}</td>
                 <td>{{ employee.date_naissance|date:"d/m/Y"|default:"-" }}</td>
-                <td>{{ employee.salaire|default:"-" }}</td>
+                <td>{% if employee.salaire %}{{ employee.salaire|floatformat:2|intcomma }} FCFA{% else %}-{% endif %}</td>
                 <td>
                     <a href="{% url 'modifier_employee' employee.pk %}" class="btn btn-sm btn-warning">Modifier</a>
+                    <a href="{% url 'supprimer_employee' employee.pk %}" class="btn btn-sm btn-danger ms-1">Supprimer</a>
                 </td>
             </tr>
             {% empty %}
