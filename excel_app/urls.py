@@ -28,6 +28,7 @@ urlpatterns = [
     path('employees/', views.liste_employees, name='liste_employees'),
     path('employee/<int:pk>/modifier/', views.modifier_employee, name='modifier_employee'),
     path('employee/creer/', views.creer_employee, name='creer_employee'),
+    path('employee/<int:pk>/supprimer/', views.supprimer_employee, name='supprimer_employee'),
     path('exporter/', views.exporter_excel, name='exporter_excel'),
     # API REST
     path('', include(router.urls)),

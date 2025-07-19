@@ -28,6 +28,7 @@
     <button type="submit" class="btn btn-primary">{% if creation %}Créer{% else %}Enregistrer{% endif %}</button>
     {% if not creation %}
         <a href="{% url 'liste_employees' %}" class="btn btn-secondary">Annuler</a>
+        <a href="{% url 'supprimer_employee' employee.pk %}" class="btn btn-danger ms-2">Supprimer</a>
     {% endif %}
 </form>
 {% endblock %}

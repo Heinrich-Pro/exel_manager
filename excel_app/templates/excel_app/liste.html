@@ -30,6 +30,7 @@
                 <td>{% if employee.salaire %}{{ employee.salaire|floatformat:2|intcomma }} FCFA{% else %}-{% endif %}</td>
                 <td>
                     <a href="{% url 'modifier_employee' employee.pk %}" class="btn btn-sm btn-warning">Modifier</a>
+                    <a href="{% url 'supprimer_employee' employee.pk %}" class="btn btn-sm btn-danger ms-1">Supprimer</a>
                 </td>
             </tr>
             {% empty %}

@@ -112,3 +112,13 @@ def exporter_excel(request):
     response['Content-Disposition'] = 'attachment; filename=employees_export.xlsx'
 
     return response
+
+
+def supprimer_employee(request, pk):
+    from django.urls import reverse
+    employee = get_object_or_404(Employee, pk=pk)
+    if request.method == 'POST':
+        employee.delete()
+        messages.success(request, 'Employé supprimé avec succès!')
+        return redirect('liste_employees')
+    return render(request, 'excel_app/supprimer.html', {'employee': employee})
