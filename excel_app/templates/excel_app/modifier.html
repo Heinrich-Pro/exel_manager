@@ -1,0 +1,17 @@
+{% extends 'excel_app/base.html' %}
+
+{% block content %}
+{% if creation %}
+    <h2>Créer un employé</h2>
+{% else %}
+    <h2>Modifier l'employé : {{ employee }}</h2>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">{% if creation %}Créer{% else %}Enregistrer{% endif %}</button>
+    {% if not creation %}
+        <a href="{% url 'liste_employees' %}" class="btn btn-secondary">Annuler</a>
+    {% endif %}
+</form>
+{% endblock %}

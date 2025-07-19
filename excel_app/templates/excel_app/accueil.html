@@ -1,0 +1,14 @@
+{% extends 'excel_app/base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Bienvenue dans Excel Manager</h1>
+    <p class="lead">Une application pour gérer l'importation, la modification et l'exportation de données d'employés depuis des fichiers Excel.</p>
+    <hr class="my-4">
+    <p>Commencez par importer un fichier Excel ou visualiser les employés existants.</p>
+    <div class="d-grid gap-2 d-md-block">
+        <a href="{% url 'importer_excel' %}" class="btn btn-primary btn-lg">Importer Excel</a>
+        <a href="{% url 'liste_employees' %}" class="btn btn-secondary btn-lg">Voir les employés</a>
+    </div>
+</div>
+{% endblock %}

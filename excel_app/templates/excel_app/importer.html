@@ -1,0 +1,14 @@
+{% extends 'excel_app/base.html' %}
+
+{% block content %}
+<h2>Importer un fichier Excel</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.fichier_excel.label_tag }}
+        {{ form.fichier_excel }}
+        <div class="form-text">Le fichier Excel doit contenir les colonnes : nom, prenom, email, telephone, date_naissance, salaire</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Importer</button>
+</form>
+{% endblock %}
